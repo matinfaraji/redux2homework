@@ -1,0 +1,43 @@
+.card {
+  width: 300px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card-image {
+  position: relative;
+}
+
+.buy-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+  background-color: green;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h2,
+.card-content p {
+  margin: 0;
+  padding: 0;
+}
+
+.card-price {
+  color: #333;
+  font-size: 24px;
+  margin-top: 10px;
+}

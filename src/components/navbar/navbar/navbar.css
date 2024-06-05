@@ -1,0 +1,54 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    color: black;
+  }
+  
+  .menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .menu {
+    display: flex;
+  }
+  
+  .menu-item {
+    margin-left: 20px;
+    color: black;
+    text-decoration: none;
+  }
+  
+  .menu-item:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 750px) {
+    .menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 60px;
+      flex-direction: column;
+      background-color: #f5f5f5;
+      width: 100%;
+      text-align: right;
+      padding: 10px;
+    }
+  
+    .menu.active {
+      display: flex;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  }

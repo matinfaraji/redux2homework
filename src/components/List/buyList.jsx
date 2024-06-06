@@ -2,7 +2,13 @@
 import "./buyList.css";
 import db from "../db/data.json";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+function showToast() {
+  var toastElement = document.getElementById("toast");
+  toastElement.className = "toast show";
+  setTimeout(function () {
+    toastElement.className = toastElement.className.replace("show", "");
+  }, 3000);
+}
 
 export default function Card() {
   return (
@@ -13,7 +19,11 @@ export default function Card() {
           <p className="p1">{item.type}</p>
           <p className="p2">{item.name}</p>
           <p className="price">${item.price}</p>
-          <button className="buy-button">
+          <button className="buy-button" onClick={showToast}>
+            <div id="toast" className="toast">
+              plant added to basket shop!
+            </div>
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"

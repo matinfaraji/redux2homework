@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import "./navbar.css";
 
 const Navbar = () => {
@@ -15,15 +15,17 @@ const Navbar = () => {
         {isOpen ? "✕" : "☰"}
       </div>
       <div className={`menu ${isOpen ? "active" : ""}`}>
-        <a href="/home" className="menu-item">
+        <a href="#" className="menu-item">
           Home
         </a>
-        <a href="/about" className="menu-item">
+        <a href="#" className="menu-item">
           About Us
         </a>
-        <a href="/contact" className="menu-item">
+        <a href="#" className="menu-item">
           Contact Us
         </a>
+        <a href="#"></a>
+
       </div>
     </nav>
   );

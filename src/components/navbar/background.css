@@ -24,6 +24,7 @@
 .logo {
   font-size: 24px;
   color: black;
+  padding: 35px;
 }
 
 .menu-icon {
@@ -34,6 +35,7 @@
 
 .menu {
   display: flex;
+  padding: 30px;
 }
 
 .menu-item {
@@ -77,11 +79,13 @@ h2 {
   font-weight: 400;
   line-height: 50px;
   font-size: 60px;
-  padding: 0 0 0 20px;
+  padding: 0 0 0 6rem;
 }
 h4 {
   padding-left: 20px;
   font-size: 30px;
+  padding-bottom: 20px;
+  padding-left: 4rem;
 }
 .button1 {
   background-color: #ff0000; /* Green */
@@ -92,7 +96,7 @@ h4 {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 8rem;
   cursor: pointer;
   transition-duration: 0.4s;
   border-radius: 80px

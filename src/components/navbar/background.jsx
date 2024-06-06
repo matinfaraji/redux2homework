@@ -35,9 +35,9 @@ export default function Background() {
           <h4>Best Quality Plants</h4>
           <h2>
             Amazing Variety
-            <br />
+            <br className="br1"/>
             Of Plants Starting
-            <br />
+            <br className="br2" />
             Just $12
           </h2>
           <button className="button1">SHOP NOW</button>

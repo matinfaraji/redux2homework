@@ -19,10 +19,10 @@ export default function Card() {
           <p className="p1">{item.type}</p>
           <p className="p2">{item.name}</p>
           <p className="price">${item.price}</p>
-          <button className="buy-button" onClick={showToast}>
             <div id="toast" className="toast">
               plant added to basket shop!
             </div>
+          <button className="buy-button" onClick={showToast}>
 
             <svg
               xmlns="http://www.w3.org/2000/svg"

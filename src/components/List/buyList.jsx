@@ -3,14 +3,12 @@ import "./buyList.css";
 import db from "../db/data.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Star } from "lucide-react";
-import { useState } from "react";
+// import { useState } from "react";
 // /         ༼ つ ◕_◕ ༽つ     ¯\_(ツ)_/¯
 import { useDispatch } from "react-redux";
-import { addShopping, deleteShopping } from "../../redux/actions";
-
+import { addShopping } from "../../redux/actions";
 
 export default function Card() {
-
   const dispatch = useDispatch();
   const handelClick = (item) => {
     var toastElement = document.getElementById("toast");
@@ -18,11 +16,11 @@ export default function Card() {
     setTimeout(function () {
       toastElement.className = toastElement.className.replace("show", "");
     }, 3000);
-  
+
     //i
     // 💩💩💩💩💩💩💩💩💩💩💩💩💩💩
-  
-    dispatch(addShopping(item.price))
+console.log(item);
+    dispatch(addShopping(item));
   };
   return (
     <>
@@ -33,28 +31,33 @@ export default function Card() {
             <p className="p1">{item.type} </p>
             <p className="p2">{item.name} </p>
             {/* stars */}
-            <div className="star-rating" >
-              <div className="stars" > 
+            <div className="star-rating">
+              <div className="stars" >
                 {Array.from({ length: 5 }, () => (
                   <Star fill="#111" strokeWidth={0} />
                 ))}
               </div>
-              <div className="stars rating"> {Array.from({ length: item.stars }, () => (
+              <div className="stars rating">
+                {" "}
+                {Array.from({ length: item.stars }, () => (
                   <Star fill="yellow" strokeWidth={0} />
-                ))}</div>
+                ))}
+              </div>
             </div>
             {item.offPrice ? (
-              <p className="price" >
+              <p className="price">
                 ${item.price} ${item.offPrice}
               </p>
             ) : (
-              <p className="price" id='price'>${item.price}</p> 
+              <p className="price" id="price">
+                ${item.price}
+              </p>
             )}
             <div id="toast" className="toast">
               plant added to basket shop!
-            {/* {console.log(item.price)} */}
+              {/* {console.log(item.price)} */}
             </div>
-            <button className="buy-button" onClick={()=>handelClick(item) } >
+            <button className="buy-button" onClick={() => handelClick(item)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

@@ -1,48 +1,60 @@
+/* eslint-disable react/jsx-key */
 import "./buyList.css";
 import db from "../db/data.json";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import { useState } from "react";
-///         ༼ つ ◕_◕ ༽つ     ¯\_(ツ)_/¯
-// import { useDispatch } from "react-redux";
-// import { addShopping, deleteShopping } from "../../redux/actions";
+import { Star } from "lucide-react";
+import { useState } from "react";
+// /         ༼ つ ◕_◕ ༽つ     ¯\_(ツ)_/¯
+import { useDispatch } from "react-redux";
+import { addShopping, deleteShopping } from "../../redux/actions";
 
-// function showToast() {
-//   var toastElement = document.getElementById("toast");
-//   toastElement.className = "toast show";
-//   setTimeout(function () {
-//     toastElement.className = toastElement.className.replace("show", "");
-//   }, 3000);
-// }
 
-// const dispatch = useDispatch();
-const handelClick= ()=>{
-  var toastElement = document.getElementById("toast");
-  toastElement.className = "toast show";
-  setTimeout(function () {
-    toastElement.className = toastElement.className.replace("show", "");
-  }, 3000);
-  // console.log(e.target.item.price);
-// dispatch(addShopping(e.target.item.price))
-}
 export default function Card() {
 
-
-  // 💩
+  const dispatch = useDispatch();
+  const handelClick = (item) => {
+    var toastElement = document.getElementById("toast");
+    toastElement.className = "toast show";
+    setTimeout(function () {
+      toastElement.className = toastElement.className.replace("show", "");
+    }, 3000);
+  
+    //i
+    // 💩💩💩💩💩💩💩💩💩💩💩💩💩💩
+  
+    dispatch(addShopping(item.price))
+  };
   return (
     <>
- 
       <div className="allCard">
         {db.map((item, index) => (
           <div className="card" key={index} style={{ position: "relative" }}>
             <img src={item.src} alt="" />
-            <p className="p1">{item.type}</p>
-            <p className="p2">{item.name}</p>
-            
-            {item.offPrice ? <p className="price">${item.price}  ${item.offPrice}</p> :<p className="price">${item.price}</p>}
+            <p className="p1">{item.type} </p>
+            <p className="p2">{item.name} </p>
+            {/* stars */}
+            <div className="star-rating" >
+              <div className="stars" > 
+                {Array.from({ length: 5 }, () => (
+                  <Star fill="#111" strokeWidth={0} />
+                ))}
+              </div>
+              <div className="stars rating"> {Array.from({ length: item.stars }, () => (
+                  <Star fill="yellow" strokeWidth={0} />
+                ))}</div>
+            </div>
+            {item.offPrice ? (
+              <p className="price" >
+                ${item.price} ${item.offPrice}
+              </p>
+            ) : (
+              <p className="price" id='price'>${item.price}</p> 
+            )}
             <div id="toast" className="toast">
               plant added to basket shop!
+            {/* {console.log(item.price)} */}
             </div>
-            <button className="buy-button" onClick={handelClick}>
+            <button className="buy-button" onClick={()=>handelClick(item) } >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

@@ -2,7 +2,7 @@
 import {
     ADD_SHOPPING,
     DELETE_SHOPPING,
-  } from './actions.js';
+  } from './action.js';
   
   const addShopping = (data) => {
     return {

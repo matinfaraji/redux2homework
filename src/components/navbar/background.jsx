@@ -1,4 +1,4 @@
-import "./background.css";
+
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -15,13 +15,11 @@ export default function Background() {
     setIsOpen(!isOpen);
   };
   // (*/ω＼*)
-  
-  const price = useSelector(({ shopping }) => {
-    return shopping.reduce((acc, item) => {
-   const total   = parseFloat(item.price)
-      return acc + total;
-    },0 );
-  });
+
+
+  const data = useSelector(({ shopping }) => shopping);
+
+  const totalPrice = data.reduce((total, item) => total + parseFloat(item.price), 0).toFixed(2)
   return (
     <section>
       <div className="heru">
@@ -43,7 +41,7 @@ export default function Background() {
             </a>
             <NavLink to={"/PurchaseTable"} className="menu-item">
               <div>
-                 ${price}
+                ${totalPrice}
                 {/* {console.log(price)} */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

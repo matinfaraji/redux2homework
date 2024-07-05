@@ -11,10 +11,10 @@ import {
     };
   };
   
-  const deleteShopping = (data) => {
+  const deleteShopping = (index) => {
     return {
       type: DELETE_SHOPPING,
-      payload: data,
+      payload: index,
     };
   };
 

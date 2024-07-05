@@ -11,7 +11,7 @@ const reducer = (state = initialState, action) => {
     case ADD_SHOPPING:
       return { ...state, shopping: [...state.shopping, action.payload] };
     case DELETE_SHOPPING:
-      return { ...state, shopping: state.shopping.slice(0, -1) };
+      return { ...state, shopping: state.shopping.filter((item,index)=> index!==action.payload) };
 
     default:
         return state;

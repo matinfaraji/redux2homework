@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-key */
-import "./buyList.css";
+
 import db from "../db/data.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Star } from "lucide-react";
-// import { useState } from "react";
+
 // /         ༼ つ ◕_◕ ༽つ     ¯\_(ツ)_/¯
 import { useDispatch } from "react-redux";
 import { addShopping } from "../../redux/actions";
@@ -17,9 +17,8 @@ export default function Card() {
       toastElement.className = toastElement.className.replace("show", "");
     }, 3000);
 
-    //i
     // 💩💩💩💩💩💩💩💩💩💩💩💩💩💩
-console.log(item);
+    console.log(item);
     dispatch(addShopping(item));
   };
   return (
@@ -32,7 +31,7 @@ console.log(item);
             <p className="p2">{item.name} </p>
             {/* stars */}
             <div className="star-rating">
-              <div className="stars" >
+              <div className="stars">
                 {Array.from({ length: 5 }, () => (
                   <Star fill="#111" strokeWidth={0} />
                 ))}
@@ -55,7 +54,6 @@ console.log(item);
             )}
             <div id="toast" className="toast">
               plant added to basket shop!
-              {/* {console.log(item.price)} */}
             </div>
             <button className="buy-button" onClick={() => handelClick(item)}>
               <svg
